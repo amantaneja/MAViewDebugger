@@ -16,7 +16,7 @@ class ViewConstraintGraphView: UIView {
     
     lazy private var centerView: UIView = {
         let centerView = UIView()
-        centerView.layer.borderColor = UIColor.darkGray.cgColor
+        centerView.layer.borderColor = UIColor.darkGray.cgColor 
         centerView.layer.borderWidth = 0.5
         centerView.layer.cornerRadius = 4.0
         return centerView
