@@ -55,18 +55,18 @@ extension UIView {
     
     
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-       if isTouchesEnabled {
-           super.touchesBegan(touches, with: event)
+        if isTouchesEnabled {
+            super.touchesBegan(touches, with: event)
         } else {
             touchDownTimer = event?.timestamp ?? 0.0
         }
     }
     
     open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-           if isTouchesEnabled {
-                super.touchesEnded(touches, with: event)
-            } else {
-                
+        if isTouchesEnabled {
+            super.touchesEnded(touches, with: event)
+        } else {
+            
             let timeToEnable = 5.0
             
             if ((event?.timestamp ?? 0.0) - touchDownTimer > timeToEnable) {
@@ -76,7 +76,7 @@ extension UIView {
             
             touchDownTimer = 0.0
         }
-    
+        
         func isTouchDownTimerValidForDebugger(eventTimeStamp: TimeInterval, beginTime: TimeInterval, allowedDuration: Double) -> Bool {
             if (eventTimeStamp - beginTime) > allowedDuration {
                 return true
@@ -185,21 +185,21 @@ extension UIButton {
         static var isTouchesEnabled:Bool = false
         static var touchDownTimer: TimeInterval = 0.0
     }
-
+    
     
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-       if isTouchesEnabled {
-           super.touchesBegan(touches, with: event)
+        if isTouchesEnabled {
+            super.touchesBegan(touches, with: event)
         } else {
             touchDownTimer = event?.timestamp ?? 0.0
         }
     }
     
     open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-           if isTouchesEnabled {
-                super.touchesEnded(touches, with: event)
-            } else {
-                
+        if isTouchesEnabled {
+            super.touchesEnded(touches, with: event)
+        } else {
+            
             let timeToEnable = 5.0
             
             if ((event?.timestamp ?? 0.0) - touchDownTimer > timeToEnable) {
@@ -208,9 +208,9 @@ extension UIButton {
             }
             
             touchDownTimer = 0.0
-        
+            
         }
-    
+        
         func isTouchDownTimerValidForDebugger(eventTimeStamp: TimeInterval, beginTime: TimeInterval, allowedDuration: Double) -> Bool {
             if (eventTimeStamp - beginTime) > allowedDuration {
                 return true
