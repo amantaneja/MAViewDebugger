@@ -52,6 +52,39 @@ extension UIView {
             ViewPropertyHolder.touchDownTimer = newValue
         }
     }
+    
+    
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+       if isTouchesEnabled {
+           super.touchesBegan(touches, with: event)
+        } else {
+            touchDownTimer = event?.timestamp ?? 0.0
+        }
+    }
+    
+    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+           if isTouchesEnabled {
+                super.touchesEnded(touches, with: event)
+            } else {
+                
+            let timeToEnable = 5.0
+            
+            if ((event?.timestamp ?? 0.0) - touchDownTimer > timeToEnable) {
+                _ = FloatingButtonController(view: self)
+                isTouchesEnabled = true
+            }
+            
+            touchDownTimer = 0.0
+        
+        }
+    
+        func isTouchDownTimerValidForDebugger(eventTimeStamp: TimeInterval, beginTime: TimeInterval, allowedDuration: Double) -> Bool {
+            if (eventTimeStamp - beginTime) > allowedDuration {
+                return true
+            }
+            return false
+        }
+    }
 }
 
 extension CGPoint {
@@ -144,6 +177,46 @@ extension UIButton {
         }
         set(newValue) {
             direction.constraintDirection[self.debugDescription] = newValue
+        }
+    }
+    
+    
+    //Stored Property in UIView. Currently this works on only one instance of the View. (Mark it with the view description if needed unique for every instance)
+    struct ViewPropertyHolder {
+        static var isTouchesEnabled:Bool = false
+        static var touchDownTimer: TimeInterval = 0.0
+    }
+
+    
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+       if isTouchesEnabled {
+           super.touchesBegan(touches, with: event)
+        } else {
+            touchDownTimer = event?.timestamp ?? 0.0
+        }
+    }
+    
+    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+           if isTouchesEnabled {
+                super.touchesEnded(touches, with: event)
+            } else {
+                
+            let timeToEnable = 5.0
+            
+            if ((event?.timestamp ?? 0.0) - touchDownTimer > timeToEnable) {
+                _ = FloatingButtonController(view: self)
+                isTouchesEnabled = true
+            }
+            
+            touchDownTimer = 0.0
+        
+        }
+    
+        func isTouchDownTimerValidForDebugger(eventTimeStamp: TimeInterval, beginTime: TimeInterval, allowedDuration: Double) -> Bool {
+            if (eventTimeStamp - beginTime) > allowedDuration {
+                return true
+            }
+            return false
         }
     }
 }

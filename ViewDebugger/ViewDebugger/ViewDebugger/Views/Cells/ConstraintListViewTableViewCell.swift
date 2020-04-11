@@ -28,16 +28,7 @@ class ConstraintListViewTableViewCell: UITableViewCell {
     }
     
     private func createViews() {
-        let margins = contentView.layoutMarginsGuide
-
-        contentView.addSubview(constraintName)
-        constraintName.text = "Hi"
-        constraintName.translatesAutoresizingMaskIntoConstraints = false
-        contentView.translatesAutoresizingMaskIntoConstraints = false
         
-        constraintName.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10).isActive = true
-        constraintName.topAnchor.constraint(equalTo: margins.topAnchor, constant: 5).isActive = true
-        constraintName.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -10).isActive = true
     }
     
 }
