@@ -75,7 +75,6 @@ extension UIView {
             }
             
             touchDownTimer = 0.0
-        
         }
     
         func isTouchDownTimerValidForDebugger(eventTimeStamp: TimeInterval, beginTime: TimeInterval, allowedDuration: Double) -> Bool {
