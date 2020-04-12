@@ -212,7 +212,7 @@ extension UIButton {
         }
         
         func isTouchDownTimerValidForDebugger(eventTimeStamp: TimeInterval, beginTime: TimeInterval, allowedDuration: Double) -> Bool {
-            if (eventTimeStamp - beginTime) > allowedDuration {
+            if (eventTimeStamp - beginTime) > allowedDuration{
                 return true
             }
             return false
