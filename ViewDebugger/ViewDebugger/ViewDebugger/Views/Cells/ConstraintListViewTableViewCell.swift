@@ -11,13 +11,13 @@ import UIKit
 class ConstraintListViewTableViewCell: UITableViewCell {
     
     private var constraintName: UILabel = {
-        let constraintName = UILabel()
-        constraintName.font = UIFont.boldSystemFont(ofSize: 13.0)
-        constraintName.numberOfLines = 0
-        constraintName.textColor = .darkGray
-        return constraintName
+        let label = UILabel()
+        label.numberOfLines = 0
+        return label
     }()
-        
+    
+    private var isActiveSwitch = UISwitch()
+   
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         createViews()
@@ -28,7 +28,24 @@ class ConstraintListViewTableViewCell: UITableViewCell {
     }
     
     private func createViews() {
+        let marginGuide = contentView.layoutMarginsGuide
+
+        contentView.addSubview(constraintName)
+        
+        // configure titleLabel
+        contentView.addSubview(constraintName)
+        contentView.addSubview(isActiveSwitch)
+        
+        isActiveSwitch.translatesAutoresizingMaskIntoConstraints = false
+        constraintName.translatesAutoresizingMaskIntoConstraints = false
+        
+        isActiveSwitch.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: 10.0).isActive = true
+        isActiveSwitch.centerYAnchor.constraint(equalTo: marginGuide.centerYAnchor).isActive = true
+        
+        constraintName.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
+        constraintName.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
+        constraintName.trailingAnchor.constraint(equalTo: isActiveSwitch.leadingAnchor, constant: -10).isActive = true
+        constraintName.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
         
     }
-    
 }

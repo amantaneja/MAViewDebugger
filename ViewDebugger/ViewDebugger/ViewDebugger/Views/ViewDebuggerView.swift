@@ -49,14 +49,8 @@ class ViewDebuggerView: UIView {
         addSubview(toolbar)
         toolbar.frame = CGRect(origin: self.bounds.origin, size: .init(width: self.bounds.size.width, height: 40))
         addHelpersInsideToolbar()
-        addSeperator()
         createContainerView()
-//        createViewGraphView()
         createConstraintListView()
-    }
-    
-    func addSeperator() {
-        
     }
     
     private func addHelpersInsideToolbar() {
@@ -103,11 +97,7 @@ class ViewDebuggerView: UIView {
     }
     
     @objc func fullScreenTapped() {
-                delegate?.toolbarButtonTappedWith(type: .close)
-//        if let constraintListView = constraintListView, let constraintGraphView = constraintGraphView {
-//            UIView.transition(from: isShowing ? constraintListView : constraintGraphView, to: !isShowing ? constraintListView : constraintGraphView, duration: 1, options: .transitionFlipFromLeft, completion: nil)
-//            isShowing = !isShowing
-//        }
+        delegate?.toolbarButtonTappedWith(type: .close)
     }
     
     func addClose() {
@@ -116,7 +106,6 @@ class ViewDebuggerView: UIView {
         fullScreenButton.tintColor = .black
         fullScreenButton.setImage(UIImage(named: "close"), for: .normal)
         toolbar.addSubview(fullScreenButton)
-        //        fullScreenButton.frame = CGRect(origin: .init(x: toolbarButtons[.close]?.ori - 18, y:toolbar.bounds.origin.x + 8), size: .init(width: 10, height: 10))
     }
     
     required init?(coder aDecoder: NSCoder) {

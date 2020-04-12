@@ -28,7 +28,6 @@ class ViewConstraintListView: UIView {
         addSubview(self.tableView)
         self.tableView.frame = self.bounds
         self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 70
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
