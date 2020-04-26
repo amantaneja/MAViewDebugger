@@ -10,11 +10,7 @@ import UIKit
 
 class ConstraintListViewTableViewCell: UITableViewCell {
     
-    private var constraintName: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        return label
-    }()
+    private var constraintName = ViewHelper.getLabel()
     
     private var isActiveSwitch = UISwitch()
    
