@@ -167,7 +167,7 @@ extension UIButton {
     
     open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        let timeToEnable = 5.0
+        let timeToEnable = 2.0
         if ((event?.timestamp ?? 0.0) - touchDownTimer > timeToEnable) {
             _ = FloatingButtonController(view: self)
             touchDownTimer = 0.0

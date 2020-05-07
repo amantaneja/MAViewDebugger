@@ -61,7 +61,7 @@ class ViewDebuggerView: UIView {
     private func createContainerView() {
         containerView = UIView()
         containerView?.backgroundColor = .white
-        containerView?.frame = CGRect(origin: .init(x: .zero, y: self.toolbar.bounds.maxY), size: .init(width: toolbar.bounds.width, height: self.frame.height - toolbar.bounds.height))
+        containerView?.frame = CGRect(origin: .init(x: .zero, y: self.toolbar.bounds.maxY + 20), size: .init(width: toolbar.bounds.width, height: self.frame.height - toolbar.bounds.height))
         if let containerView = containerView {
             addSubview(containerView)
         }

@@ -24,7 +24,7 @@ class ConstraintListViewModel {
     
     func getCellFor(_ tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: ConstraintListViewTableViewCell.self.description(), for: indexPath) as? ConstraintListViewTableViewCell {
-            cell.accessoryType = .disclosureIndicator
+            cell.selectionStyle = .none
             return cell
         }
         

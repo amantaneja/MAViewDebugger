@@ -12,7 +12,11 @@ class ConstraintListViewTableViewCell: UITableViewCell {
     
     private var constraintName = ViewHelper.getLabel()
     
-    private var isActiveSwitch = UISwitch()
+    private var isActiveSwitch: UISwitch = {
+        let activeSwitch = UISwitch()
+        activeSwitch.translatesAutoresizingMaskIntoConstraints = false
+        return activeSwitch
+    }()
    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -32,7 +36,6 @@ class ConstraintListViewTableViewCell: UITableViewCell {
         contentView.addSubview(constraintName)
         contentView.addSubview(isActiveSwitch)
         
-        isActiveSwitch.translatesAutoresizingMaskIntoConstraints = false
         constraintName.translatesAutoresizingMaskIntoConstraints = false
         
         isActiveSwitch.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: 10.0).isActive = true
@@ -41,7 +44,7 @@ class ConstraintListViewTableViewCell: UITableViewCell {
         constraintName.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
         constraintName.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         constraintName.trailingAnchor.constraint(equalTo: isActiveSwitch.leadingAnchor, constant: -10).isActive = true
-        constraintName.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
+        constraintName.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor, constant: -20).isActive = true
         
     }
 }
