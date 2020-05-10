@@ -23,8 +23,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Lcm-sO-5HJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BIh-RB-4rX"/>
-                            <constraint firstItem="Lcm-sO-5HJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tqj-wY-7Jw"/>
+                            <constraint firstItem="Lcm-sO-5HJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="389" id="Oyt-gs-xfQ"/>
+                            <constraint firstItem="Lcm-sO-5HJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="184" id="cta-BH-b1s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

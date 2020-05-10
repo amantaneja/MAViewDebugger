@@ -13,9 +13,11 @@ class ViewConstraintListView: UIView {
     private var tableView = UITableView()
     private var viewModel: ConstraintListViewModel?
     
-    override init(frame: CGRect) {
+    private var model: [ConstraintListModel]
+    
+    init(frame: CGRect, model: [ConstraintListModel]) {
+        self.model = model
         super.init(frame: frame)
-        initializeViewModel()
         createViews()
         registerCells()
     }
@@ -48,10 +50,14 @@ class ViewConstraintListView: UIView {
 
 extension ViewConstraintListView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel?.getNumberOfRowsIn(section: section) ?? .zero
+        model.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        viewModel?.getCellFor(tableView, at: indexPath) ?? UITableViewCell()
+        if let cell = viewModel?.getCellFor(tableView, at: indexPath) as? ConstraintListViewTableViewCell {
+            cell.setData(data: model[indexPath.row])
+        }
+        
+        return UITableViewCell()
     }
 }

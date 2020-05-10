@@ -29,6 +29,7 @@
 		5C6C18CB24556B4400641B1E /* UIViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C18CA24556B4400641B1E /* UIViewLayout.swift */; };
 		5C888A262437921D00A5DD67 /* ConstraintListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C888A252437921D00A5DD67 /* ConstraintListViewModel.swift */; };
 		5C888A29243794EF00A5DD67 /* ConstraintListViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C888A28243794EF00A5DD67 /* ConstraintListViewTableViewCell.swift */; };
+		5C891C5D246858A600AA2A48 /* ConstraintToModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C891C5C246858A600AA2A48 /* ConstraintToModelBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		5C6C18CA24556B4400641B1E /* UIViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewLayout.swift; sourceTree = "<group>"; };
 		5C888A252437921D00A5DD67 /* ConstraintListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintListViewModel.swift; sourceTree = "<group>"; };
 		5C888A28243794EF00A5DD67 /* ConstraintListViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintListViewTableViewCell.swift; sourceTree = "<group>"; };
+		5C891C5C246858A600AA2A48 /* ConstraintToModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintToModelBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				5C888A252437921D00A5DD67 /* ConstraintListViewModel.swift */,
+				5C891C5C246858A600AA2A48 /* ConstraintToModelBuilder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				5C5AB21A241A48E10038866C /* ViewConstraintGraphView.swift in Sources */,
 				5C2EB70B2410D38E0004DA5F /* ViewDebuggerExtensions.swift in Sources */,
 				5C6C18C924556A6A00641B1E /* ViewHelper.swift in Sources */,
+				5C891C5D246858A600AA2A48 /* ConstraintToModelBuilder.swift in Sources */,
 				5C04B636241264F20058A04D /* ViewDebuggerWindow.swift in Sources */,
 				5C6C18CB24556B4400641B1E /* UIViewLayout.swift in Sources */,
 			);

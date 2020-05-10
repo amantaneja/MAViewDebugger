@@ -12,7 +12,7 @@ import UIKit
 struct ConstraintListModel {
     var name: String?
     var isEnabled: Bool?
-    var constant: Float?
+    var constant: CGFloat?
     var wrtView: UIView?
 }
 
@@ -32,7 +32,7 @@ class ConstraintListViewModel {
     }
     
     func getNumberOfRowsIn(section: Int) -> Int {
-        return 5
+        return 10
     }
     
     

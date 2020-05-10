@@ -45,6 +45,10 @@ class ConstraintListViewTableViewCell: UITableViewCell {
         constraintName.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         constraintName.trailingAnchor.constraint(equalTo: isActiveSwitch.leadingAnchor, constant: -10).isActive = true
         constraintName.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor, constant: -20).isActive = true
-        
+    }
+    
+    func setData(data: ConstraintListModel) {
+        isActiveSwitch.isOn = data.isEnabled ?? false
+        constraintName.text = data.constant?.description
     }
 }

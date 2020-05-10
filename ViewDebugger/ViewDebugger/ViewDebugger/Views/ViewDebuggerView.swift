@@ -53,6 +53,12 @@ class ViewDebuggerView: UIView {
         createConstraintListView()
     }
     
+    private func fetchModel() -> [ConstraintListModel] {
+        guard let containerView = containerView else { return [] }
+        let modelBuilder = ConstraintToModelBuilder(view: containerView)
+        return modelBuilder.listOfConstraint
+    }
+    
     private func addHelpersInsideToolbar() {
         addFullScreen()
         addClose()
@@ -78,7 +84,7 @@ class ViewDebuggerView: UIView {
     
     func createConstraintListView() {
         if constraintListView == nil {
-            constraintListView = ViewConstraintListView(frame: self.containerView?.frame ?? .zero)
+            constraintListView = ViewConstraintListView(frame: self.containerView?.frame ?? .zero, model: fetchModel())
             if let listView = constraintListView {
                 addSubview(listView)
             }
